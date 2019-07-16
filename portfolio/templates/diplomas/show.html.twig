@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Diplomas{% endblock %}
+
+{% block body %}
+    <h1>Diplomas</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ diploma.id }}</td>
+            </tr>
+            <tr>
+                <th>StartDate</th>
+                <td>{{ diploma.startDate ? diploma.startDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>EndDate</th>
+                <td>{{ diploma.endDate ? diploma.endDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ diploma.name }}</td>
+            </tr>
+            <tr>
+                <th>Specialty</th>
+                <td>{{ diploma.specialty }}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>{{ diploma.location }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('diplomas_index') }}">back to list</a>
+
+    <a href="{{ path('diplomas_edit', {'id': diploma.id}) }}">edit</a>
+
+    {{ include('diplomas/_delete_form.html.twig') }}
+{% endblock %}

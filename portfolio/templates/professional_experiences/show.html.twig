@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ProfessionalExperiences{% endblock %}
+
+{% block body %}
+    <h1>ProfessionalExperiences</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ professional_experience.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ professional_experience.title }}</td>
+            </tr>
+            <tr>
+                <th>SocietyName</th>
+                <td>{{ professional_experience.societyName }}</td>
+            </tr>
+            <tr>
+                <th>StartDate</th>
+                <td>{{ professional_experience.startDate ? professional_experience.startDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>EndDate</th>
+                <td>{{ professional_experience.endDate ? professional_experience.endDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ professional_experience.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('professional_experiences_index') }}">back to list</a>
+
+    <a href="{{ path('professional_experiences_edit', {'id': professional_experience.id}) }}">edit</a>
+
+    {{ include('professional_experiences/_delete_form.html.twig') }}
+{% endblock %}
