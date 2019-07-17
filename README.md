@@ -1,4 +1,4 @@
-# portfolio
+# PORTFOLIO
 
 ## Getting Started for Balises
 
