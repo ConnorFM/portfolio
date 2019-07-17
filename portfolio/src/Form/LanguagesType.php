@@ -14,7 +14,7 @@ class LanguagesType extends AbstractType
         $builder
             ->add('Name')
             ->add('Level')
-            ->add('user')
+//            ->add('user')
         ;
     }
 

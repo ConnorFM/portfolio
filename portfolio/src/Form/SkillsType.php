@@ -16,7 +16,7 @@ class SkillsType extends AbstractType
             ->add('hardSkill')
             ->add('softSkill')
             ->add('completion')
-            ->add('user')
+//            ->add('user')
         ;
     }
 

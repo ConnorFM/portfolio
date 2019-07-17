@@ -47,4 +47,16 @@ class UserRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findEverything()
+    {
+        $qb = $this->createQueryBuilder('u')
+            ->innerJoin('u.diplomas', 'd' )
+            ->innerJoin('u.projects', 'p' )
+            ->addSelect('p')
+            ->addSelect('d')
+            ->getQuery();
+
+        return $qb->execute();
+    }
 }

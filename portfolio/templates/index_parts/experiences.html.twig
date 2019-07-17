@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="h4 text-center mb-4 title">Professional Experiences</div>
+    {% for experience in experiences %}
+        <div class="card">
+            <div class="row">
+                <div class="col-md-3 bg-primary">
+                    <div class="card-body">
+                        <p>From {{ experience.startDate | date('m/Y') }} to {{ experience.endDate | date('m/Y') }}</p>
+                        <div class="h5">{{ experience.society }}</div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body">
+                        <div class="h5">{{ experience.name }}</div>
+                        <p>{{ experience.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

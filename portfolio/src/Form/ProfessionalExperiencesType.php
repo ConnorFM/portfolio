@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\ProfessionalExperiences;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,10 +15,10 @@ class ProfessionalExperiencesType extends AbstractType
         $builder
             ->add('title')
             ->add('societyName')
-            ->add('startDate')
-            ->add('endDate')
+            ->add('startDate', DateType::class)
+            ->add('endDate', DateType::class)
             ->add('description')
-            ->add('user')
+//            ->add('user')
         ;
     }
 

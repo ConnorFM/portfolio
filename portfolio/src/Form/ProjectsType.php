@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Projects;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,14 +14,14 @@ class ProjectsType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('startDate')
-            ->add('endDate')
+            ->add('startDate', DateType::class)
+            ->add('endDate', DateType::class)
             ->add('membersNumber')
             ->add('description')
             ->add('screenshot')
             ->add('link')
             ->add('technoUsed')
-            ->add('user')
+//            ->add('user')
         ;
     }
 

@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block body %}
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #222222;
+        }
+
+    </style>
+    {{ include('index_parts/navbar.html.twig') }}
+
+    {% for user in users %}
+    <div class="d-flex justify-content-around text-center">
+        <div class="card-transparent" style="width: 78rem;">
+            <img src="{{ user.photo }}" class="card-img-top img-thumbnail" style="max-width: 18rem;" alt="...">
+            <div class="card-body">
+                <h1 class="card-title">{{ user.firstName }} {{ user.lastName }}</h1>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="section" id="about">
+        {{ include('index_parts/about.html.twig') }}
+    </div>
+
+    <hr class="mt-5">
+
+    <div class="section" id="projects">
+        {{ include('index_parts/projects.html.twig') }}
+    </div>
+
+
+    <hr class="mt-5">
+
+    <div class="section" id="experiences">
+        {{ include('index_parts/experiences.html.twig') }}
+    </div>
+
+    <hr class="mt-5">
+
+    <div class="section" id="skill1">
+        {{ include('index_parts/softskills.html.twig') }}
+    </div>
+
+    <hr class="mt-5">
+
+    <div class="section" id="skill2">
+        {{ include('index_parts/hardskills.html.twig') }}
+    </div>
+
+    <hr class="mt-5">
+
+    <div class="section" id="diplomas">
+        {{ include('index_parts/diplomas.html.twig') }}
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+
+{% endblock %}
