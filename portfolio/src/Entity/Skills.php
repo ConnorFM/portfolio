@@ -24,12 +24,12 @@ class Skills
     /**
      * @ORM\Column(type="boolean")
      */
-    private $hardSkill;
+    private $hardSkill = false;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $softSkill;
+    private $softSkill = false;
 
     /**
      * @ORM\Column(type="integer")
