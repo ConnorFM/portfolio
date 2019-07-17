@@ -3,7 +3,7 @@
     {% for experience in experiences %}
         <div class="card">
             <div class="row">
-                <div class="col-md-3 bg-primary">
+                <div class="col-md-3 bg-light">
                     <div class="card-body">
                         <p>From {{ experience.startDate | date('m/Y') }} to {{ experience.endDate | date('m/Y') }}</p>
                         <div class="h5">{{ experience.society }}</div>

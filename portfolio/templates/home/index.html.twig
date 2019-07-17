@@ -14,11 +14,45 @@
             color: #222222;
         }
 
+        .carouselLink {
+            text-decoration: none;
+            color: white;
+        }
+
+        .carouselLink:hover {
+            text-decoration: none;
+            color: #222222;
+        }
+
+        #topBtn {
+            display: none;
+            position: fixed;
+            bottom: 5vh;
+            right: 5vw;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: black;
+            color: #555;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        #topBtn:hover {
+            background-color: #555; /* Add a dark-grey background on hover */
+            color: black;
+        }
+
+        body {
+            background-color: #AAAAAA;
+            radian
+        }
+
     </style>
     {{ include('index_parts/navbar.html.twig') }}
 
     {% for user in users %}
-    <div class="d-flex justify-content-around text-center">
+    <div class="d-flex justify-content-around text-center mt-4">
         <div class="card-transparent" style="width: 78rem;">
             <img src="{{ user.photo }}" class="card-img-top img-thumbnail" style="max-width: 18rem;" alt="...">
             <div class="card-body">
@@ -63,10 +97,36 @@
         {{ include('index_parts/diplomas.html.twig') }}
     </div>
 
+    <button onclick="topFunction()" id="topBtn" title="Go to top"><i class="fa fa-chevron-up fa-2x"></i></button>
+
+
+
+
+
 
 {% endblock %}
 
 {% block javascripts %}
+
+    <script type="text/javascript">
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("topBtn").style.display = "block";
+        } else {
+        document.getElementById("topBtn").style.display = "none";
+        }
+        }
+
+        function topFunction() {
+        window.scrollTo({top:0, behavior: "smooth"})
+        }
+
+
+
+    </script>
 
 
 {% endblock %}
