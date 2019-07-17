@@ -1,23 +1,23 @@
     <div class="container">
         <div class="h4 text-center mb-4 title">Soft Skills</div>
-        <div class="card">
+        <div class="card" data-aos="fade-right" data-aos-offset="10">
             <div class="card-body">
-
+                <div class="row d-flex justify-content-right">
                 {% for skill in skills %}
                     {% if skill.softSkill %}
-                        <div class="row d-flex justify-content-right">
-                            <div class="col-md-6">
+
+                            <div class="col-md-3">
                                 <div class="progress-container progress-primary">{{ skill.name | title }}</div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="progress">
                                     <div class="progress-bar bg-dark" role="progressbar" style="width: {{ skill.completion }}%" aria-valuenow="{{ skill.completion }}" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
-                        </div>
+
                     {% endif %}
                 {% endfor %}
-
+                </div>
             </div>
         </div>
     </div>

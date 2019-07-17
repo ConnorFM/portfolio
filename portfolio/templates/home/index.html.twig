@@ -44,16 +44,15 @@
         }
 
         body {
-            background-color: #AAAAAA;
-            radian
+            background: linear-gradient(#03063f, #9198e5);
         }
 
     </style>
     {{ include('index_parts/navbar.html.twig') }}
 
     {% for user in users %}
-    <div class="d-flex justify-content-around text-center mt-4">
-        <div class="card-transparent" style="width: 78rem;">
+    <div class="d-flex justify-content-around text-center mt-5">
+        <div class="card-transparent mt-5" style="width: 78rem;">
             <img src="{{ user.photo }}" class="card-img-top img-thumbnail" style="max-width: 18rem;" alt="...">
             <div class="card-body">
                 <h1 class="card-title">{{ user.firstName }} {{ user.lastName }}</h1>
