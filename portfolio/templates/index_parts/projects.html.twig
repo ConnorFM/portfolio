@@ -1,7 +1,8 @@
 <div class="container">
+    <div class="h4 mt-0 text-center white">Projects</div>
     <div class="card" data-aos="fade-right">
         <div class="card-body">
-            <div class="h4 mt-0 text-center title">Projects</div>
+
             <div class="container mt-5" style="width:50vw">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner" role="listbox" style=" width:100%; height: 20rem !important;">
@@ -12,7 +13,7 @@
                             {% else %}
                             <div class="carousel-item">
                                 {% endif %}
-                                <img src="{{ project.screenshot }}" class="d-block w-100">
+                                <img src="{{ asset('uploads/' ~ project.screenshot) }}" class="d-block w-100">
                                 <div class="carousel-caption d-none d-md-block" style="background-color: black; opacity:0.3;">
                                     <h5><a class="carouselLink" data-toggle="collapse" href="#collapse{{ project.id }}" role="button" aria-expanded="false" aria-controls="collapseExample">{{ project.name | title }}</a></h5>
                                     <p>From {{ project.startDate | date('m/Y')}} to {{ project.endDate | date('m/Y') }}</p>

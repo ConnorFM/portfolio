@@ -1,1 +1,63 @@
 @import "~bootstrap/scss/bootstrap";
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #222222;
+}
+
+.carouselLink {
+  text-decoration: none;
+  color: white;
+}
+
+.carouselLink:hover {
+  text-decoration: none;
+  color: #222222;
+}
+
+#topBtn {
+  display: none;
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: #555;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#topBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+  color: black;
+}
+
+.background {
+  background: linear-gradient(#03063f, #9198e5);
+  width: 100%;
+}
+
+hr{
+  background-color: white;
+}
+
+.name{
+  color: white;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.white{
+  color: white;
+}
+
+.admin{
+  background-color: #d7dbde;
+  height: 100vh;
+}

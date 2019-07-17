@@ -3,9 +3,13 @@
 {% block title %}New ProfessionalExperiences{% endblock %}
 
 {% block body %}
-    <h1>Create new ProfessionalExperiences</h1>
+<div class="container admin">
+
+
+<h1>Create new ProfessionalExperiences</h1>
 
     {{ include('professional_experiences/_form.html.twig') }}
 
     <a href="{{ path('professional_experiences_index') }}">back to list</a>
-{% endblock %}
+</div>
+    {% endblock %}

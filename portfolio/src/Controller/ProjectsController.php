@@ -9,6 +9,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+
+
 
 /**
  * @Route("/projects")
@@ -35,6 +40,18 @@ class ProjectsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $fileImage = $request->files->get('projects')['screenshot'];
+
+            $uploads_directory = $this->getParameter('uploads_directory');
+
+            $fileName = md5(uniqid()) . '.' . $fileImage->guessExtension();
+
+            $fileImage->move($this->getParameter('uploads_directory'), $fileName);
+
+            $project->setScreenshot($fileName);
+
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($project);
             $entityManager->flush();
@@ -67,6 +84,17 @@ class ProjectsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $fileImage = $request->files->get('projects')['screenshot'];
+
+            $uploads_directory = $this->getParameter('uploads_directory');
+
+            $fileName = md5(uniqid()) . '.' . $fileImage->guessExtension();
+
+            $fileImage->move($this->getParameter('uploads_directory'), $fileName);
+
+            $project->setScreenshot($fileName);
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('projects_index');

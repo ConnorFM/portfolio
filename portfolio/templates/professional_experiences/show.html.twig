@@ -3,7 +3,9 @@
 {% block title %}ProfessionalExperiences{% endblock %}
 
 {% block body %}
-    <h1>ProfessionalExperiences</h1>
+<div class="container admin">
+
+<h1>ProfessionalExperiences</h1>
 
     <table class="table">
         <tbody>
@@ -39,4 +41,5 @@
     <a href="{{ path('professional_experiences_edit', {'id': professional_experience.id}) }}">edit</a>
 
     {{ include('professional_experiences/_delete_form.html.twig') }}
+</div>
 {% endblock %}

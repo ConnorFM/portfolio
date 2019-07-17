@@ -1,104 +1,63 @@
-{% extends 'base.html.twig' %}
+{% extends 'base2.html.twig' %}
 
 {% block title %}Portfolio{% endblock %}
 
 {% block body %}
-    <style>
-        a {
-            text-decoration: none;
-            color: black;
-        }
 
-        a:hover {
-            text-decoration: none;
-            color: #222222;
-        }
 
-        .carouselLink {
-            text-decoration: none;
-            color: white;
-        }
 
-        .carouselLink:hover {
-            text-decoration: none;
-            color: #222222;
-        }
 
-        #topBtn {
-            display: none;
-            position: fixed;
-            bottom: 5vh;
-            right: 5vw;
-            z-index: 99;
-            border: none;
-            outline: none;
-            background-color: black;
-            color: #555;
-            cursor: pointer;
-            border-radius: 50%;
-        }
+        {{ include('index_parts/navbar.html.twig') }}
 
-        #topBtn:hover {
-            background-color: #555; /* Add a dark-grey background on hover */
-            color: black;
-        }
-
-        body {
-            background: linear-gradient(#03063f, #9198e5);
-        }
-
-    </style>
-    {{ include('index_parts/navbar.html.twig') }}
-
-    {% for user in users %}
-    <div class="d-flex justify-content-around text-center mt-5">
-        <div class="card-transparent mt-5" style="width: 78rem;">
-            <img src="{{ user.photo }}" class="card-img-top img-thumbnail" style="max-width: 18rem;" alt="...">
-            <div class="card-body">
-                <h1 class="card-title">{{ user.firstName }} {{ user.lastName }}</h1>
+        {% for user in users %}
+        <div class="d-flex justify-content-around text-center mt-5">
+            <div class="card-transparent mt-5" style="width: 78rem;">
+                <img src="{{ user.photo }}" class="card-img-top img-thumbnail" style="max-width: 18rem;" alt="...">
+                <div class="card-body">
+                    <h1 class="card-title name">{{ user.firstName }} {{ user.lastName }}</h1>
+                </div>
             </div>
         </div>
+        {% endfor %}
+
+        <div class="section" id="about">
+            {{ include('index_parts/about.html.twig') }}
+        </div>
+
+        <hr class="mt-5">
+
+        <div class="section" id="projects">
+            {{ include('index_parts/projects.html.twig') }}
+        </div>
+
+
+        <hr class="mt-5">
+
+        <div class="section" id="experiences">
+            {{ include('index_parts/experiences.html.twig') }}
+        </div>
+
+        <hr class="mt-5">
+
+        <div class="section" id="skill1">
+            {{ include('index_parts/softskills.html.twig') }}
+        </div>
+
+        <hr class="mt-5">
+
+        <div class="section" id="skill2">
+            {{ include('index_parts/hardskills.html.twig') }}
+        </div>
+
+        <hr class="mt-5">
+
+        <div class="section" id="diplomas">
+            {{ include('index_parts/diplomas.html.twig') }}
+        </div>
+
+        <button onclick="topFunction()" id="topBtn" title="Go to top"><i class="fa fa-chevron-up fa-2x"></i></button>
+
     </div>
-    {% endfor %}
-
-    <div class="section" id="about">
-        {{ include('index_parts/about.html.twig') }}
-    </div>
-
-    <hr class="mt-5">
-
-    <div class="section" id="projects">
-        {{ include('index_parts/projects.html.twig') }}
-    </div>
-
-
-    <hr class="mt-5">
-
-    <div class="section" id="experiences">
-        {{ include('index_parts/experiences.html.twig') }}
-    </div>
-
-    <hr class="mt-5">
-
-    <div class="section" id="skill1">
-        {{ include('index_parts/softskills.html.twig') }}
-    </div>
-
-    <hr class="mt-5">
-
-    <div class="section" id="skill2">
-        {{ include('index_parts/hardskills.html.twig') }}
-    </div>
-
-    <hr class="mt-5">
-
-    <div class="section" id="diplomas">
-        {{ include('index_parts/diplomas.html.twig') }}
-    </div>
-
-    <button onclick="topFunction()" id="topBtn" title="Go to top"><i class="fa fa-chevron-up fa-2x"></i></button>
-
-
 
 
 

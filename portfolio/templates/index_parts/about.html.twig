@@ -33,12 +33,12 @@
                     </div>
 
                     <div class="row mt-3">
-                        <div class="col-sm-4"><strong class="text-uppercase">Langues:</strong></div>
+                        <div class="col-sm-4"><strong class="text-uppercase">Languages:</strong></div>
                         <div class="col-sm-8">
                             {% for language in languages %}
                                 <p>{{ language.name }}</p>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: {{ skill.completion }}%" aria-valuenow="{{ language.level }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" style="width: {{ language.level }}%" aria-valuenow="{{ language.level }}" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             {% endfor %}
                         </div>
