@@ -31,5 +31,13 @@ class HomeController extends AbstractController
             'experiences' => $professionalExperiencesRepository->findAll(),
         ]);
     }
+
+    /**
+     * @Route("/admin", name="admin")
+     */
+    public function admin()
+    {
+        return $this->render('home/admin.html.twig');
+    }
 }
 

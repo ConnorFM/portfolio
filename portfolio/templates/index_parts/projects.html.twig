@@ -1,6 +1,5 @@
-<div class="container">
     <div class="h4 mt-0 text-center white">Projects</div>
-    <div class="card" data-aos="fade-right">
+    <div class="card-transparent" data-aos="fade-right">
         <div class="card-body">
 
             <div class="container mt-5" style="width:50vw">
@@ -9,12 +8,12 @@
                         {% for project in projects %}
 
                         {% if loop.index == 1 %}
-                        <div class="carousel-item active">
+                        <div class="carousel-item active" data-interval="1000000">
                             {% else %}
-                            <div class="carousel-item">
+                            <div class="carousel-item" data-interval="1000000">
                                 {% endif %}
                                 <img src="{{ asset('uploads/' ~ project.screenshot) }}" class="d-block w-100">
-                                <div class="carousel-caption d-none d-md-block" style="background-color: black; opacity:0.3;">
+                                <div class="carousel-caption d-none d-md-block captionCarousel">
                                     <h5><a class="carouselLink" data-toggle="collapse" href="#collapse{{ project.id }}" role="button" aria-expanded="false" aria-controls="collapseExample">{{ project.name | title }}</a></h5>
                                     <p>From {{ project.startDate | date('m/Y')}} to {{ project.endDate | date('m/Y') }}</p>
                                 </div>

@@ -40,7 +40,7 @@ a:hover {
 }
 
 .background {
-  background: linear-gradient(#03063f, #9198e5);
+  background: linear-gradient(#555454, #bbbeca);
   width: 100%;
 }
 
@@ -60,4 +60,9 @@ hr{
 .admin{
   background-color: #d7dbde;
   min-height: 1000vh;
+}
+
+.captionCarousel{
+  background-color: black;
+  opacity: 0.8;
 }

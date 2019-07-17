@@ -1,6 +1,6 @@
 {% for user in users %}
 <div class="container">
-    <div class="card" data-aos="fade-left" data-aos-offset="10">
+    <div class="card" data-aos="zoom-in" data-aos-offset="10" data-aos-duration="500">
         <div class="row">
             <div class="col-lg-6 col-md-12">
                 <div class="card-body">
@@ -38,7 +38,7 @@
                             {% for language in languages %}
                                 <p>{{ language.name }}</p>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: {{ language.level }}%" aria-valuenow="{{ language.level }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar bg-dark" role="progressbar" style="width: {{ language.level }}%" aria-valuenow="{{ language.level }}" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             {% endfor %}
                         </div>

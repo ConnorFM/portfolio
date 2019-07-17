@@ -2,19 +2,19 @@
     <div class="h4 text-center mb-4 title white">Professional Experiences</div>
     {% for experience in experiences %}
         {% if loop.index % 2 == 0 %}
-            <div class="card mb-4" data-aos="fade-right">
+            <div class="card mb-4" {#data-aos="fade-right"#}>
         {% else %}
-            <div class="card mb-4" data-aos="fade-left">
+            <div class="card mb-4" {#data-aos="fade-left"#}>
         {% endif %}
-                <div class="row">
-                    <div class="col-md-3 bg-light">
+                <div class="row no-gutters">
+                    <div class="col-md-3 bg-secondary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500" style="height: auto;">
                         <div class="card-body">
                             <p>From {{ experience.startDate | date('m/Y') }} to {{ experience.endDate | date('m/Y') }}</p>
                             <div class="h5">{{ experience.societyName }}</div>
                         </div>
                     </div>
                     <div class="col-md-9">
-                        <div class="card-body">
+                        <div class="card-body" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                             <div class="h5">{{ experience.title }}</div>
                             <p>{{ experience.description }}</p>
                         </div>

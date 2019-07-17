@@ -12,7 +12,7 @@
         {% for user in users %}
         <div class="d-flex justify-content-around text-center mt-5">
             <div class="card-transparent mt-5" style="width: 78rem;">
-                <img src="{{ asset('uploads/' ~ user.photo) }}" class="card-img-top img-thumbnail" style="max-width: 18rem;" alt="...">
+                <img src="{{ asset('uploads/' ~ user.photo) }}" class="card-img-top img-thumbnail" data-aos="zoom-in" style="max-width: 18rem; border-radius: 50%;" alt="...">
                 <div class="card-body">
                     <h1 class="card-title name">{{ user.firstName }} {{ user.lastName }}</h1>
                 </div>
